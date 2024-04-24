@@ -1,0 +1,2 @@
+# Know Your Website
+ This project aims to develop a web-based application for detecting potential threats in web requests. Leveraging machine learning models such as Decision Trees, Random Forest, Support Vector Machine, and Gradient Boosting, the application predicts threat status based on various input parameters like request method, path, parameters, user-agent, IP address, content type, and response code. The system provides insights into potential threats, allowing for proactive security measures.
