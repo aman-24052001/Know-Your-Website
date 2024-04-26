@@ -1,0 +1,216 @@
+Request Method,Request Path,Request Parameters,User-Agent,Referrer,IP Address,Timestamp,Content-Type,Response Code,Label
+GET,/login,username=test&password=test123,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36",http://example.com/home,192.168.1.100,2024-04-23 10:15:00,application/json,200,0
+POST,/admin,username=admin&password=admin123!,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36",-,192.168.1.101,2024-04-23 10:20:00,text/html,401,1
+GET,/reset,email=user@example.com,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36",http://example.com/login,192.168.1.102,2024-04-23 10:25:00,text/html,404,0
+GET,/about,-,"Mozilla/5.0 (iPhone; CPU OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1",http://example.com/,192.168.1.103,2024-04-23 10:30:00,text/html,200,0
+POST,/contact,name=John&email=john@example.com&message=Hello,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36",http://example.com/about,192.168.1.104,2024-04-23 10:35:00,application/json,200,0
+GET,/product/123,-,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36",http://example.com/home,192.168.1.105,2024-04-23 10:40:00,text/html,200,0
+GET,/search?q=test,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36",http://example.com/,192.168.1.106,2024-04-23 10:45:00,text/html,200,0,
+POST,/api/v1/data,"data={""key"":""value""}",Custom User Agent,-,192.168.1.107,2024-04-23 10:50:00,application/json,,
+PUT,/users/1,"user_data={""name"":""Alice"", ""email"":""[email address removed]""}",Python-httpx/0.22.2,-,192.168.1.109,2024-04-23 11:00:00,application/json,200,0
+DELETE,/products/5,-,curl/7.81.0,[invalid URL removed],192.168.1.110,2024-04-23 11:05:00,application/json,204,1 (potential deletion vulnerability)
+GET,/images/avatar.png,-,curl/7.81.0,-,192.168.1.111,2024-04-23 11:10:00,image/png,200,0
+POST,/api/v2/upload,file=image.jpg,"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",[invalid URL removed],192.168.1.112,2024-04-23 11:15:00,multipart/form-data,201,0
+GET,/403,-,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36",[invalid URL removed],192.168.1.113,2024-04-23 11:20:00,text/html,403,0
+POST,/feedback,"message=""Great website!"" & rating=5","Safari/605.1.15 (KHTML, like Gecko)",http://example.com/about,192.168.1.114,2024-04-23 11:25:00,application/x-www-form-urlencoded,200,0
+GET,/.well-known/security.txt,-,Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0),-,192.168.1.115,2024-04-23 11:30:00,text/plain,200,0
+POST,/api/v1/register,username=new_user&password=weak_password,Unknown User-Agent,-,10.0.0.1 (Suspicious IP),2024-04-23 11:35:00,application/json,400,1 (potential weak password)
+GET,/robots.txt,-,Baiduspider/2.0 (+[invalid URL removed]),-,192,,,,
+GET,/blog/category/security,-,curl/7.81.0,[invalid URL removed],192.168.1.116,2024-04-23 11:40:00,text/html,200,0
+PUT,/users/admin,"user_data={""name"":""hacker"", ""email"":""[email address removed]""}",Postman/8.9.20,[invalid URL removed],192.168.1.117,2024-04-23 11:45:00,application/json,403,1 (potential unauthorized access attempt)
+GET,/search?q=SQL+injection,-,Mozilla/5.0 (compatible; Googlebot/2.1; +[invalid URL removed]),-,192.168.1.118,2024-04-23 11:50:00,text/html,200,1 (potential SQL injection attempt)
+POST,/api/v2/comment,"comment=""Nice post!"" & post_id=123","Safari/605.1.15 (KHTML, like Gecko)",[invalid URL removed],192.168.1.119,2024-04-23 11:55:00,application/x-www-form-urlencoded,201,0
+GET,/favicon.ico,-,Lynx/2.8.8rec7,-,192.168.1.120,2024-04-23 12:00:00,image/x-icon,200,0
+GET,/admin/login.php,-,curl/7.81.0,-,10.0.0.2 (Suspicious IP),2024-04-23 12:05:00,text/html,200,1 (potential brute-force attack target)
+POST,/login,"username=""valid_user"" & password=""blank_password""","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36",http://example.com/,192.168.1.121,2024-04-23 12:10:00,application/json,401,0
+GET,/health-check,-,curl/7.81.0,-,192.168.1.122,2024-04-23 12:15:00,text/plain,200,0
+POST,/api/v2/cart/add,item_id=5 & quantity=100,Python-httpx/0.22.2,[invalid URL removed],192.168.1.123,2024-04-23 12:20:00,application/json,422,1 (potential stock overflow attempt)
+GET,/sitemap.xml,-,Baiduspider/2.0 (+[invalid URL removed]),-,10.0.0.3 (Suspicious IP),2024-04-23 12:25:00,,,
+GET,/css/styles.css,-,"Mozilla/5.0 (iPhone; CPU OS 16_0 like Mac OS X) AppleWebKit/606.1.1 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1",http://example.com/,192.168.1.126,2024-04-23 12:30:00,text/css,200,0
+OPTIONS,/api/v1/users,-,Postman/8.9.20,[invalid URL removed],192.168.1.127,2024-04-23 12:35:00,-,200,0
+HEAD,/images/product1.jpg,-,curl/7.81.0,-,192.168.1.128,2024-04-23 12:40:00,-,302,0
+PATCH,/users/2,"user_data={""active"":false}",Java/17.0.2,[invalid URL removed],192.168.1.129,2024-04-23 12:45:00,application/json-patch+json,200,0
+GET,/careers,-,"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",http://example.com/about,192.168.1.130,2024-04-23 12:50:00,text/html,200,0
+TRACE,/,-,curl/7.81.0,-,10.0.0.4 (Suspicious IP),2024-04-23 12:55:00,-,405,1 (potential server misconfiguration vulnerability)
+POST,/api/v3/payment,"card_number=""4111********1234"" & cvv=""123"" & expiry_date=""2024-12""",Chrome/103.0.0.0,[invalid URL removed],192.168.1.131,2024-04-23 13:00:00,application/json,200,0
+PUT,/products/10,"product_data={""name"":""New Product"", ""price"":-10.00}",Python-requests/2.28.1,[invalid URL removed],192.168.1.132,2024-04-23 13:05:00,application/json,400,1 (potential negative pricing vulnerability)
+GET,/robots.txt,-,Slurp/ (+[invalid URL removed]),-,192.168.1.133,2024-04-23 13:10:00,text/plain,200,0
+POST,/api/v2/feedback,"message=""Broken link on contact page!"" & url=""[invalid URL removed]""","Safari/605.1.15 (KHTML, like Gecko)",[[invalid URL removed]],,,,,
+GET,/terms-of-service,-,Edge/108.0.0.0 Safari/537.36,http://example.com/,192.168.1.134,2024-04-23 13:15:00,text/html,200,0
+DELETE,/articles/archive/15,-,Apache-HttpClient/4.5.13,[invalid URL removed],192.168.1.135,2024-04-23 13:20:00,application/json,204,1 (potential deletion vulnerability for unauthorized users)
+GET,/js/scripts.js,-,Wget/1.21.1,[invalid URL removed],192.168.1.136,2024-04-23 13:25:00,application/javascript,200,0
+PUT,/users/profile,"profile_picture=""@path/to/image.png""",curl/7.81.0,[invalid URL removed],10.0.0.5 (Suspicious IP),2024-04-23 13:30:00,multipart/form-data,403 (potential unauthorized profile modification attempt),1
+POST,/api/internal/logs,"data= {""error_message"":""Internal server error""}",Python-requests/2.28.1,[invalid URL removed],192.168.1.137,2024-04-23 13:35:00,application/json,500,1 (potential internal server error exposure)
+GET,/en/,-,Yandex/22.5.0.2193,-,192.168.1.138,2024-04-23 13:40:00,text/html,302,0 (potential website localization redirect)
+POST,/api/v2/upload,"file=""confidential_data.txt""","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36",[invalid URL removed],192.168.1.139,2024-04-23 13:45:00,multipart/form-data,401 (potential unauthorized data upload attempt),1
+GET,/support/faq,-,curl/7.81.0,[invalid URL removed],192.168.1.140,2024-04-23 13:50:00,text/html,200,0
+PUT,/config,"settings={""enable_debug_mode"":true}",Java/17.0.2,[invalid URL removed],10.0.0.6 (Suspicious IP),2024-04-23 13:55:00,application/json,403 (potential unauthorized configuration modification attempt),1
+GET,/.git/HEAD,-,GitPython/3.4.4,-,192.168.1.141,2024-04-23 14:00:00,text/plain,404,0 (potential information disclosure attempt - version control system)
+POST,/api/v2/reviews,"rating=2 & comment=""Disappointed with the product quality.""",Firefox/108.0,[invalid URL removed],192.168.1.142,2024-04-23 14:05:00,application/json,201,0
+DELETE,/users/inactive,"usernames=[""user1"", ""user2""]",Postman/8.9.20,[invalid URL removed],192.168.1.143,2024-04-23 14:10:00,application/json,403 (potential unauthorized bulk delete attempt),1
+GET,/privacy-policy,-,Chrome/103.0.0.0,http://example.com/about,192.168.1.144,2024-04-23 14:15:00,text/html,200,0
+PUT,/products/3,"product_data={""description"":""<script>alert('XSS!')</script>""}",Apache-HttpClient/4.5.13,[invalid URL removed],192.168.1.145,2024-04-23 14:20:00,application/json,400 (potential XSS vulnerability in product update),1
+POST,/api/v1/register,"username=""weak_user"" & password=""123456""",curl/7.81.0,-,10.0.0.7 (Suspicious IP),2024-04-23 14:25:00,application/json,200,1 (potential weak password creation)
+GET,/admin,-,Lynx/2.8.8rec7,-,192.168.1.146,2024-04-23 14:30:00,text/html,401,0
+POST,/contact,"name=""John Doe"" & email=""invalid_email"" & message=""Hello""","Safari/605.1.15 (KHTML, like Gecko)",[invalid URL removed]),192.168.1.147,2024-04-23 14:35:00,application/json,400,0 (potential invalid data validation check)
+GET,/sitemap.xml.gz,-,NING/1.2.3,http://example.com/,192.168.1.148,2024-04-23 14:40:00,application/gzip,200,0
+PUT,/users/me,"user_data={""location"":""country_not_supported""}",Java/17.0.2,[invalid URL removed],192.168.1.149,2024-04-23 14:45:00,application/json,400 (potential unsupported location update),1
+POST,/api/v2/search,"query=""important business document""",Postman/8.9.20,http://example.com/,192.168.1.150,2024-04-23 14:50:00,application/json,200,0 (potential internal document search functionality)
+HEAD,/api/v3/users/1,-,Python-requests/2.28.1,[invalid URL removed],192.168.1.151,2024-04-23 14:55:00,-,200,1 (potential information disclosure through headers - user data)
+GET,/robots.txt.txt,-,Slurp/ (+[invalid URL removed]),-,192.168.1.152,2024-04-23 15:00:00,text/plain,404,0
+POST,/api/v2/cart/add,"item_id=""out_of_stock"" & quantity=1",Chrome/103.0.0.0,[invalid URL removed],192.168.1.153,2024-04-23 15:05:00,application/json,404,1 (potential attempt to add unavailable item)
+PUT,/security/settings,"settings={""disable_two_factor_auth"":true}",curl/7.81.0,[invalid URL removed],10.0.0.8 (Suspicious IP),2024-04-23 15:10:00,application/json,403 (potential unauthorized security setting change),1
+GET,/favicon.ico.png,-,Lynx/2.8.8rec7,-,192.168.1.154,2024-04-23 15:15:00,image/png,404,0
+POST,/api/internal/restart,-,Python-httpx/0.22.2,[invalid URL removed],192.168.1.155,2024-04-23 15:20:00,application/json,503,0 (potential internal server restart functionality)
+GET,/blog/author/guest,-,Edge/108.0.0.0 Safari/537.36,[invalid URL removed],192.168.1.156,2024-04-23 15:25:00,text/html,200,0
+PATCH,/users/5,"user_data={""email"":""[email address removed]""}","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36",[invalid URL removed],192.168.1.157,2024-04-23 15:30:00,application/json-patch+json,200,0
+POST,/api/v1/social/login,"provider=""facebook"" & access_token=""invalid_token""","Safari/605.1.15 (KHTML, like Gecko)",[invalid URL removed],192.168.1.158,2024-04-23 15:35:00,application/json,401,1 (potential invalid social login attempt)
+GET,/vulnerabilities.txt,-,GitPython/3.4.4,-,10.0.0.9 (Suspicious IP),2024-04-23 15:40:00,text/plain,404,0 (potential information disclosure attempt - vulnerability
+GET,/basket.html,-,Wget/1.21.1,http://example.com/,192.168.1.159,2024-04-23 15:45:00,text/html,200,0
+POST,/api/v2/comment,"comment=""Great post, but broken image!"" & post_id=123 & image_url=""invalid_image_url""",Firefox/108.0,[invalid URL removed],192.168.1.160,2024-04-23 15:50:00,application/json,400,1 (potential broken image link vulnerability)
+PUT,/users/password,"new_password=""password123"" & confirm_password=""password124""",Postman/8.9.20,[invalid URL removed],192.168.1.161,2024-04-23 15:55:00,application/json,400,1 (potential password confirmation mismatch)
+DELETE,/files/backup.zip,-,curl/7.81.0,[invalid URL removed],10.0.0.10 (Suspicious IP),2024-04-23 16:00:00,application/json,403 (potential unauthorized deletion attempt - sensitive file),1
+GET,/en/contact/,-,Yandex/22.5.0.2193,-,192.168.1.162,2024-04-23 16:05:00,text/html,200,0
+POST,/api/internal/logs,"data= {""error_message"":""User uploaded malicious file""}",Python-requests/2.28.1,[invalid URL removed],192.168.1.163,2024-04-23 16:10:00,application/json,200,1 (potential internal logging of security events)
+GET,/robots.txt?q=disallow,-,Slurp/ (+[invalid URL removed]),-,192.168.1.164,2024-04-23 16:15:00,text/plain,200,0
+PATCH,/products/7,"product_data={""stock"":-1}",Java/17.0.2,[invalid URL removed],192.168.1.165,2024-04-23 16:20:00,application/json-patch+json,400,1 (potential negative inventory setting attempt)
+POST,/api/v4/subscriptions,"plan_id=""premium"" & payment_method=""invalid_payment_token""",Chrome/103.0.0.0,[invalid URL removed],192.168.1.166,2024-04-23 16:25:00,application/json,402,1 (potential failed subscription payment)
+GET,/admin/phpinfo.php,-,"Mozilla/5.0 (Macintosh; Intel Mac OS X 12_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15",-,10.0.0.11 (Suspicious IP),2024-04-23,,,
+POST,/api/v2/chat,"message=""Hi there!"" & recipient_id=1","Safari/605.1.15 (KHTML, like Gecko)",http://example.com/,192.168.1.167,2024-04-23 16:30:00,application/json,201,0
+GET,/sitemap.xml.gz,-,NING/1.2.3,http://example.com/about,192.168.1.168,2024-04-23 16:35:00,application/gzip,403,1 (potential unauthorized access attempt to sitemap)
+PUT,/users/preferences,"preferences={""dark_mode"":true}",curl/7.81.0,[invalid URL removed],192.168.1.169,2024-04-23 16:40:00,application/json,200,0
+DELETE,/api/v3/orders/10,-,Postman/8.9.20,[invalid URL removed],192.168.1.170,2024-04-23 16:45:00,application/json,404,0
+GET,/en/fr/,-,Yandex/22.5.0.2193,-,192.168.1.171,2024-04-23 16:50:00,text/html,302,0
+POST,/api/v1/password/reset,"email=""[email address removed]""",Python-requests/2.28.1,[invalid URL removed],192.168.1.172,2024-04-23 16:55:00,application/json,400,1 (potential request with invalid data for password reset)
+GET,/healthz,-,Go-http-client/1.1,[invalid URL removed],192.168.1.173,2024-04-23 17:00:00,text/plain,200,0
+PATCH,/products/4,"product_data={""name"":null}",Java/17.0.2,[invalid URL removed],192.168.1.174,2024-04-23 17:05:00,application/json-patch+json,400,1 (potential invalid product update attempt - missing name)
+POST,/api/internal/backup,-,Python-httpx/0.22.2,[invalid URL removed],192.168.1.175,2024-04-23 17:10:00,application/json,500,1 (potential internal server backup functionality error)
+GET,/robots.txt%00,-,Slurp/ (+[invalid URL removed]),-,192.168.1.176,2024-04-23 17:15:00,text/plain,400,1 (potential null byte injection attempt in robots.txt)
+POST,/api/v2/forum/threads,"title=""Interesting topic"" & content=""This is a great discussion forum!""",Firefox/108.0,http://example.com/,192.168.1.177,2024-04-23 17:20:00,application/json,201,0
+GET,/terms-of-service.pdf,-,Wget/1.21.1,[invalid URL removed],192.168.1.178,2024-04-23 17:25:00,application/pdf,200,0
+PUT,/users/2/avatar,avatar=@[...],Apache-HttpClient/4.5.13,[invalid URL removed],192.168.1.179,2024-04-23 17:30:00,multipart/form-data,413,1 (potential attempt to upload oversized avatar)
+DELETE,/api/v1/files/archive,"filename=""old_data.txt""",curl/7.81.0,[invalid URL removed],192.168.1.180,2024-04-23 17:35:00,application/json,204,0
+GET,/careers/,-,Edge/108.0.0.0 Safari/537.36,http://example.com/,192.168.1.181,2024-04-23 17:40:00,text/html,200,0
+POST,/api/internal/audit,"data= {""event"":""user_login_attempt""}",Python-requests/2.28.1,[invalid URL removed],192.168.1.182,2024-04-23 17:45:00,application/json,200,0
+TRACE,/,-,Go-http-client/1.1,http://example.com/,192.168.1.183,2024-04-23 17:50:00,-,405,1 (potential HTTP TRACE method probing attempt)
+GET,/en/team/,-,Yandex/22.5.0.2193,http://example.com/about,192.168.1.184,2024-04-23 17:55:00,text/html,200,0
+OPTIONS,/api/v2/products,-,Java/17.0.2,[invalid URL removed],192.168.1.185,2024-04-23 18:00:00,-,200,0
+POST,/api/v3/events,"type=""purchase"" & item_id=123 & price=10.50",Chrome/103.0.0.0,http://example.com/,192.168.1.186,2024-04-23 18:05:00,application/json,201,0
+GET,/robots.txt?q=disallow: /admin,-,Slurp/ (+[invalid URL removed]),-,192.168.1.187,2024-04-23 18:10:00,text/plain,200,0
+PUT,/users/me/preferences,"preferences={""language"":""pt-BR""}",Postman/8.9.20,[invalid URL removed],192.168.1.188,2024-04-23 18:15:00,application/json,200,0
+DELETE,/api/v2/sessions,-,Python-requests/2.28.1,[invalid URL removed],192.168.1.189,2024-04-23 18:20:00,application/json,204,0
+GET,/zh/,-,Yandex/22.5.0.2193,-,192.168.1.190,2024-04-23 18:25:00,text/html,302,0
+POST,/api/internal/metrics,"data= {""metric"":""server_uptime"", ""value"":3600}",Go-http-client/1.1,[invalid URL removed],192.168.1.191,2024-04-23 18:30:00,application/json,200,0
+GET,/.git/config,-,GitPython/3.4.4,[invalid URL removed],192.168.1.192,2024-04-23 18:35:00,text/plain,403,0
+PUT,/products/9,"product_data={""active"":false}",Java/17.0.2,[invalid URL removed],192.168.1.193,2024-04-23 18:40:00,application/json,200,0
+POST,/api/v4/search/advanced,"query=""financial documents"" & filters={""date_range"":[""2023-01-01"", ""2023-12-31""]}",Firefox/108.0,http://example.com/,192.168.1.194,2024-04-23 18:45:00,application/json,200,0
+DELETE,/cache,-,curl/7.81.0,[invalid URL removed],192.168.1.195,2024-04,,,
+GET,/css/styles.min.css,-,Chromium/110.0.0.0,http://example.com/,192.168.1.196,2024-04-23 18:50:00,text/css,200,0
+POST,/api/v2/support/tickets,"title=""Need help with..."" & content=""Having trouble with...""","Safari/605.1.15 (KHTML, like Gecko)",[invalid URL removed],192.168.1.197,2024-04-23 18:55:00,application/json,201,0
+PUT,/users/3/role,"role=""admin""",Postman/8.9.20,[invalid URL removed],192.168.1.198,2024-04-23 19:00:00,application/json,403,1 (potential unauthorized user role update attempt)
+DELETE,/api/v1/tasks/completed,-,Python-requests/2.28.1,[invalid URL removed]),192.168.1.199,2024-04-23 19:05:00,application/json,204,0
+POST,/api/internal/restart/service,"service_name=""worker""",Go-http-client/1.1,[invalid URL removed],192.168.1.200,2024-04-23 19:10:00,application/json,202,0
+GET,/en/privacy,-,Edge/108.0.0.0 Safari/537.36,http://example.com/about,192.168.1.201,2024-04-23 19:15:00,text/html,200,0
+HEAD,/healthz/liveness,-,curl/7.81.0,[invalid URL removed],192.168.1.202,2024-04-23 19:20:00,-,200,0
+PATCH,/products/1,"product_data={""description"": ""<p><b>Special Offer!</b></p>""}",Java/17.0.2,[invalid URL removed],192.168.1.203,2024-04-23 19:25:00,application/json-patch+json,200,0
+POST,/api/v3/social/login,"provider=""github"" & access_token=""...compromised_token...""",Chrome/103.0.0.0,[invalid URL removed],192.168.1.204,2024-04-23 19:30:00,application/json,401,1 (potential login attempt with compromised token)
+GET,/robots.txt%0a,-,Slurp/ (+[invalid URL removed]),-,192.168.1.205,2024-04-23 19:35:00,text/plain,400,1 (potential newline character injection attempt in robots.txt)
+PUT,/users/me/password,"current_password=""old_password"" & new_password=""new_password123"" & confirm_password=""new_password1234""",Firefox/108.0,[invalid URL removed],192.168.1.206,2024-04-23 19:40:00,application/json,400,1 (potential password update with password mismatch)
+POST,/api/internal/logs,"data= {""error_message"":""User uploaded malicious script""}",Python-requests/2.28.1,[invalid URL removed],192.168.1.207,2024-04-23 19:45:00,application/json,200,1 (potential internal logging of security events - malicious script)
+DELETE,/api/v2/files/,"filename=""important_data.csv""",curl/7.81.0,[invalid URL removed],10.0.0.12 (Suspicious IP),2024-04-23 19:50:00,application/json,403,1 (potential unauthorized deletion attempt - sensitive file from suspicious IP)
+GET,/de/,-,Yandex/22.5.0.2193,-,192.168.1.208,2024-04-23 19:55:00,text/html,302,0
+POST,/api/v4/subscriptions/cancel,subscription_id=1234,Java/17.0.2,[invalid URL removed],192.168.1.209,2024-04-23 20:00:00,application/json,200,0
+PUT,/security/two-factor,"enabled=true & method=""sms"" & phone_number=""+1234567890""",Postman/8.9.20,[invalid URL removed],192.168.1.210,2024-04-23 20:05:00,application/json,200,0
+GET,/en/blog/category/tech,-,Edge/108.0.0.0 Safari/537.36,[invalid URL removed],192.168.1.211,2024-04-23 20:10:00,text/html,200,0
+POST,/api/internal/build/deploy,"project_name=""website"" & environment=""production""",Go-http-client/1.1,[invalid URL removed],19,,,,
+POST,/api/v2/payments,"amount=100.00 & currency=""USD"" & payment_method_id=1",Chrome/103.0.0.0,http://example.com/,192.168.1.212,2024-04-23 20:15:00,application/json,201,0
+GET,/robots.txt?utm_source=malicious_link,-,Slurp/ (+[invalid URL removed]),-,192.168.1.213,2024-04-23 20:20:00,text/plain,400,1 (potential malicious URL parameter in robots.txt)
+PUT,/users/password/recovery,"email=""[email address removed]"" & new_password=""new_password456""",Firefox/108.0,[invalid URL removed],192.168.1.214,2024-04-23 20:25:00,application/json,200,0
+POST,/api/internal/security/alerts,"data= {""threat_type"":""SQL injection attempt""}",Python-requests/2.28.1,[invalid URL removed],192.168.1.215,2024-04-23 20:30:00,application/json,200,1 (potential internal logging of security events - SQL injection)
+DELETE,/api/v1/shopping-cart,-,curl/7.81.0,[invalid URL removed],192.168.1.216,2024-04-23 20:35:00,application/json,204,0
+GET,/fr/,-,Yandex/22.5.0.2193,-,192.168.1.217,2024-04-23 20:40:00,text/html,302,0
+POST,/api/v4/search,"query=""confidential documents""",Java/17.0.2,http://example.com/,192.168.1.218,2024-04-23 20:45:00,application/json,403,1 (potential unauthorized search attempt for confidential documents)
+PUT,/products/6,"product_data={""price"":-99.99}",Postman/8.9.20,[invalid URL removed],192.168.1.219,2024-04-23 20:50:00,application/json,400,1 (potential invalid product update attempt - negative price)
+POST,/api/internal/user/activity,"data= {""action"":""login"", ""user_id"":123}",Go-http-client/1.1,[invalid URL removed],192.168.1.220,2024-04-23 20:55:00,application/json,200,0
+DELETE,/tmp/backup.log,-,curl/7.81.0,[invalid URL removed],10.0.0.13 (Suspicious IP),2024-04,,,
+POST,/api/v3/content/pages,"title=""New blog post"" & content=""This is a great article!"" & category_id=5",Chrome/103.0.0.0,http://example.com/,192.168.1.221,2024-04-23 21:00:00,application/json,201,0
+GET,/favicon.ico?v=123,-,Slurp/ (+[invalid URL removed]),-,192.168.1.222,2024-04-23 21:05:00,image/x-icon,200,0
+PUT,/users/me/settings,"settings={""language"":""es""}",Firefox/108.0,[invalid URL removed],192.168.1.223,2024-04-23 21:10:00,application/json,200,0
+DELETE,/api/v2/teams/10,-,Python-requests/2.28.1,[invalid URL removed],192.168.1.224,2024-04-23 21:15:00,application/json,404,1 (potential attempt to delete non-existent team)
+POST,/api/internal/audit/log,"data= {""event"":""user_registration""}",Go-http-client/1.1,[invalid URL removed],192.168.1.225,2024-04-23 21:20:00,application/json,200,0
+GET,/zh-cn/contact/,-,Yandex/22.5.0.2193,http://example.com/about,192.168.1.226,2024-04-23 21:25:00,text/html,200,0
+OPTIONS,/api/v4/users,-,Java/17.0.2,http://example.com/,192.168.1.227,2024-04-23 21:30:00,-,200,0
+PATCH,/products/3,"product_data={""stock"":5}",Postman/8.9.20,[invalid URL removed],192.168.1.228,2024-04-23 21:35:00,application/json-patch+json,200,0
+POST,/api/internal/notifications,"data= {""recipient"":""[email address removed]"", ""message"":""Your order has shipped!""}",Go-http-client/1.1,[invalid URL removed],192.168.1.229,2024-04-23 21:40:00,application/json,202,0
+POST,/api/v2/forums/threads/123/replies,"content=""Interesting perspective!""",Chrome/103.0.0.0,[invalid URL removed],192.168.1.230,2024-04-23 21:45:00,application/json,201,0
+GET,/robots.txt%0d%0a,-,Slurp/ (+[invalid URL removed]),-,192.168.1.231,2024-04-23 21:50:00,text/plain,400,1 (potential double newline character injection attempt in robots.txt)
+PUT,/users/2/name,"name=""New Username""",Firefox/108.0,[invalid URL removed],192.168.1.232,2024-04-23 21:55:00,application/json,200,0
+DELETE,/api/v1/billing/subscriptions/2,-,Python-requests/2.28.1,[invalid URL removed],192.168.1.233,2024-04-23 22:00:00,application/json,204,0
+POST,/api/internal/server/stats,"data= {""metric"":""cpu_usage"", ""value"":75.8}",Go-http-client/1.1,[invalid URL removed],192.168.1.234,2024-04-23 22:05:00,application/json,200,0
+GET,/nl/,-,Yandex/22.5.0.2193,-,192.168.1.235,2024-04-23 22:10:00,text/html,302,0
+POST,/api/v4/data/export,"data_type=""user_data"" & format=""csv""",Java/17.0.2,[invalid URL removed],192.168.1.236,2024-04-23 22:15:00,application/json,202,0
+PUT,/security/password,"current_password=""correct_password"" & new_password=""new_password"" & confirm_password=""new_password""",Postman/8.9.20,[invalid URL removed],192.168.1.237,2024-04-23 22:20:00,application/json,200,0
+POST,/api/internal/search/logs,"query=""login failure"" & timeframe=""last_hour""",Go-http-client/1.1,[invalid URL removed],192.168.1.238,2024-04-23 22:25:00,application/json,200,0
+DELETE,/api/v2/content/pages/5,-,curl/7.81.0,[invalid URL,,,,,
+POST,/api/v3/social/login,"provider=""twitter"" & access_token=""valid_token""",Chrome/103.0.0.0,http://example.com/,192.168.1.239,2024-04-23 22:30:00,application/json,200,0
+GET,[invalid URL removed],-,Slurp/ (+[invalid URL removed]),-,192.168.1.240,2024-04-23 22:35:00,text/html,404,1 (potential request for a non-existent resource)
+PUT,/users/me/avatar,avatar=@[image data removed],Firefox/108.0,[invalid URL removed],192.168.1.241,2024-04-23 22:40:00,multipart/form-data,200,0
+DELETE,/api/v1/activity-log,"user_id=123 & before=""2024-04-20""",Python-requests/2.28.1,[invalid URL removed],192.168.1.242,2024-04-23 22:45:00,application/json,204,0
+POST,/api/internal/service/restart,"service_name=""database""",Go-http-client/1.1,[invalid URL removed],192.168.1.243,2024-04-23 22:50:00,application/json,202,0
+GET,/it/,-,Yandex/22.5.0.2193,-,192.168.1.244,2024-04-23 22:55:00,text/html,302,0
+POST,/api/v4/projects,"name=""New Project"" & description=""This is a new project.""",Java/17.0.2,http://example.com/,192.168.1.245,2024-04-23 23:00:00,application/json,201,0
+PUT,/security/mfa/disable,-,Postman/8.9.20,[invalid URL removed],192.168.1.246,2024-04-23 23:05:00,application/json,200,0
+POST,/api/internal/security/updates,"data= {""update_type"":""malware_signature"", ""version"":""1.2.3""}",Go-http-client/1.1,[invalid URL removed],192.168.1.247,2024-04-23 23:10:00,application/json,200,0
+DELETE,/tmp/,-,curl/7.81.0,[invalid URL removed],192.168.1.248,2024-04-23 23:15:,,,
+GET,/login.php?username=admin'&password='',-,Burp Suite/1.7.3,-,192.168.1.249,2024-04-24 00:00:00,text/html,200,1(potential brute-force login attempt - empty password for admin)
+POST,/api/v2/users/,"username=""created_user"" & password=""weak_password""",Python-requests/2.28.1,[invalid URL removed],192.168.1.250,2024-04-24 00:05:00,application/json,201,1(potential weak password creation)
+POST,/upload.php,file=@/@evil_script.sh,curl/7.81.0,http://example.com/,192.168.1.251 (Suspicious IP),2024-04-24 00:10:00,multipart/form-data,200,1(potential file upload attack - suspicious IP)
+GET,/search?q=important+documents+filetype:pdf,-,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",[invalid URL removed],192.168.1.252,2024-04-24 00:15:00,text/html,200,1(potential data exfiltration attempt - searching for PDFs)
+POST,/api/v3/users/1/reset-password,"email=""non-existent@email.com""",Postman/8.9.20,[invalid URL removed],10.0.0.14 (Suspicious IP),2024-04-24 00:20:00,application/json,404,1(potential password reset attempt for non-existent user - suspicious IP)
+POST,/forum/post,"content=""Here's a xss: javascript:alert('XSS') link!""",Chrome/103.0.0.0,[invalid URL removed],192.168.1.253,2024-04-24 00:25:00,application/x-www-form-urlencoded,201,1(potential XSS attack in forum post)
+GET,/robots.txt%0a%0atest=malicious_script,-,Slurp/ (+[invalid URL removed]),-,192.168.1.254,2024-04-24 00:30:00,text/plain,400,1(potential newline character injection with test script in robots.txt)
+PUT,/users/admin/role,"role=""super_admin""",Java/17.0.2,[invalid URL removed],192.168.1.255,2024-04-24 00:35:00,application/json,403,1(potential unauthorized privilege escalation attempt)
+POST,/api/v4/diagnostics/ping,-,Go-http-client/1.1,[invalid URL removed],192.168.1.256,2024-04-24 00:40:00,application/json,200,1(potential port scanning attempt disguised as ping)
+GET,/login.php?username=admin'&password='',-,Burp Suite/1.7.3,-,192.168.1.249,2024-04-24 00:00:00,text/html,200,1 (potential brute-force login attempt)
+POST,/api/v2/users/,"username=""created_user"" & password=""weak_password""",Python-requests/2.28.1,[invalid URL removed],192.168.1.250,2024-04-24 00:05:00,application/json,201,0 (weak password creation - not necessarily an attack)
+POST,/upload.php,file=@/@evil_script.sh,curl/7.81.0,http://example.com/,192.168.1.251 (Suspicious IP),2024-04-24 00:10:00,multipart/form-data,200,1 (potential file upload attack)
+GET,/search?q=important+documents+filetype:pdf,-,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",[invalid URL removed],192.168.1.252,2024-04-24 00:15:00,text/html,200,1 (potential data exfiltration attempt)
+POST,/api/v3/users/1/reset-password,"email=""non-existent@email.com""",Postman/8.9.20,[invalid URL removed],10.0.0.14 (Suspicious IP),2024-04-24 00:20:00,application/json,404,0 (potential password reset attempt for non-existent user - not necessarily an attack on this system)
+POST,/forum/post,"content=""Here's a xss: javascript:alert('XSS') link!""",Chrome/103.0.0.0,[invalid URL removed],192.168.1.253,2024-04-24 00:25:00,application/x-www-form-urlencoded,201,1 (potential XSS attack)
+GET,/robots.txt%0a%0atest=malicious_script,-,Slurp/ (+[invalid URL removed]),-,192.168.1.254,2024-04-24 00:30:00,text/plain,400,1 (potential newline character injection attempt)
+PUT,/users/admin/role,"role=""super_admin""",Java/17.0.2,[invalid URL removed],192.168.1.255,2024-04-24 00:35:00,application/json,403,1 (potential unauthorized privilege escalation attempt)
+POST,/api/v4/diagnostics/ping,-,Go-http-client/1.1,[invalid URL removed],192.168.1.256,2024-04-24 00:40:00,application/json,200,1 (potential port scanning attempt)
+POST,/api/v3/social/login,"provider=""unknown"" & access_token=""invalid_token""",Chrome/103.0.0.0,http://example.com/,192.168.1.265,2024-04-24 01:30:00,application/json,401,1 (potential social login attempt with unknown provider or invalid token)
+GET,/admin,-,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",[invalid URL removed],192.168.1.266,2024-04-24 01:35:00,text/html,302,0 (potential attempt to access admin panel - not necessarily an attack)
+POST,/api/v1/users/,"username=""administrator"" & password=""blank_password""",Python-requests/2.28.1,[invalid URL removed],192.168.1.267,2024-04-24 01:40:00,application/json,400,1 (potential account creation attempt with blank password)
+PUT,/security/answer,"question=""question1"" & answer=""incorrect_answer""",Firefox/108.0,[invalid URL removed],192.168.1.268,2024-04-24 01:45:00,application/json,401,1 (potential security question answer attempt with incorrect answer)
+POST,/_ping?cmd=echo+<?php+echo+shell_exec%28%27whoami%27%29; ?>,-,Slurp/ (+[invalid URL removed]),-,192.168.1.269,2024-04-24 01:50:00,application/x-www-form-urlencoded,400,1 (potential code injection attempt using PHP shell execution)
+POST,/api/v4/upload,"filename=""important_data.csv"" & data=@[malicious_data.csv]",Java/17.0.2,[invalid URL removed],10.0.0.16 (Suspicious IP),2024-04-24 01:55:00,multipart/form-data,201,1 (potential unauthorized upload of malicious data - suspicious IP)
+DELETE,/var/www/html/index.php,-,curl/7.81.0,[invalid URL removed],192.168.1.270,2024-04-24 02:00:00,application/x-www-form-urlencoded,403,1 (potential unauthorized deletion attempt of a critical file)
+POST,/forum/post,"content=""Here's a SQL injection attempt: ' OR 1=1; --""",Thunderbird/102.0,[invalid URL removed],192.168.1.271,2024-04-24 02:05:00,application/x-www-form-urlencoded,201,1 (potential SQL injection attempt in forum post)
+POST,/api/v2/users/search,"username=""*""",Chrome/103.0.0.0,http://example.com/,192.168.1.273,2024-04-24 02:15:00,application/json,400,1 (potential attempt to enumerate user accounts using wildcard search)
+GET,/favicon.ico?v=1234567890,-,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",[invalid URL removed],192.168.1.274,2024-04-24 02:20:00,image/x-icon,404,0 (potential cache probing attempt with unlikely cache buster - not necessarily an attack)
+POST,/api/v1/sessions,"username=""admin"" & password=""!@#$%^&*""",Python-requests/2.28.1,[invalid URL removed],192.168.1.275,2024-04-24 02:25:00,application/json,401,1 (potential brute-force login attempt with strong password - likely automated)
+PUT,/security/mfa/enable,"type=""sms"" & phone_number=""+1234567890""",Firefox/108.0,[invalid URL removed],192.168.1.276,2024-04-24 02:30:00,application/json,200,0 (enabling multi-factor authentication - not necessarily an attack)
+POST,/robots.txt%0axyz%0aUser-agent: *%0adisallow: /,-,Slurp/ (+[invalid URL removed]),-,192.168.1.277,2024-04-24 02:35:00,text/plain,400,1 (potential attempt to bypass robots.txt with newline characters and user-agent wildcard)
+GET,/healthz,-,Java/17.0.2,[invalid URL removed],10.0.0.17 (Suspicious IP),2024-04-24 02:40:00,text/plain,200,1 (potential health check request from suspicious IP)
+DELETE,/api/v4/configurations/global,-,curl/7.81.0,[invalid URL removed],192.168.1.278,2024-04-24 02:45:00,application/json,403,1 (potential unauthorized deletion attempt of global configurations)
+POST,/webmail/compose,"recipient=""[email address removed]"" & subject=""Click this link to win a prize!"" & body=""This is a phishing email with a malicious link.""",Thunderbird/102.0,[invalid URL removed],192.168.1.279,2024-04-24 02:50:00,multipart/form-data,202,1 (potential spam attempt with phishing lure)
+GET,/.env,-,Go-http-client/1.1,[invalid URL removed],192.168.1.280,2024-04-24 02:55:00,text/plain,404,0 (potential attempt to access environment variables - not
+POST,/api/v3/workspaces,"name=""My Workspace"" & description=""This workspace contains sensitive data!""",Postman/8.9.20,[invalid URL removed],192.168.1.281 (Employee IP),2024-04-24 03:00:00,application/json,201,"0 (potential creation of a workspace with sensitive data description - insider threat, but not necessarily an attack)"
+GET,/assets/images/logo.png%20?cmd=systeminfo,-,Wget/1.21.1,[invalid URL removed],10.0.0.18 (External Scanner IP),2024-04-24 03:05:00,image/png,400,1 (potential directory traversal attempt with system information retrieval command)
+PUT,/users/john.doe/role,"role=""admin""",curl/7.81.0,[invalid URL removed],192.168.1.282,2024-04-24 03:10:00,application/json,403,1 (unauthorized privilege escalation attempt for a specific user)
+POST,/api/v2/search,"query=""credit card numbers""",Python-requests/2.28.1,[invalid URL removed],192.168.1.283,2024-04-24 03:15:00,application/json,403,1 (potential data exfiltration attempt searching for credit card numbers)
+POST,/chat/message,"content=""Hey everyone, check out this funny [image]"" & image_url=""malicious_[invalid URL removed]""",Chrome/103.0.0.0,[invalid URL removed],192.168.1.284,2024-04-24 03:20:00,multipart/form-data,200,1 (potential malicious image link shared in chat - could be social engineering or exploit)
+POST,/security/forgot-password,"email=""nonexistent_user@email.com"" & captcha=""gibberish_characters""",Firefox/108.0,[invalid URL removed],192.168.1.285,2024-04-24 03:25:00,application/json,400,0 (potential brute-force password reset attempt with invalid captcha - not necessarily an attack on a valid user)
+GET,/internal/logs,-,Go-http-client/1.1,[invalid URL removed],192.168.1.286 (Admin IP),2024-04-24 03:30:00,text/plain,200,0 (legitimate access to internal logs by an administrator)
+DELETE,/backups/*.tar.gz,-,curl/7.81.0,[invalid URL removed],10.0.0.19 (Suspicious IP),2024-04-24 03:35:00,application/x-www-form-urlencoded,403,1 (potential unauthorized deletion attempt of backups from suspicious IP)
+POST,/api/v4/server/restart,-,Java/17.0.2,[invalid URL removed],192.168.1.287,2024-04-24 03:40:00,application/json,500,0 (server restart attempt resulting in internal server error - not necessarily an attack)
+POST,/api/v2/users/invite,"email=""[email address removed]"" & role=""admin""",Thunderbird/102.0,[invalid URL removed],192.168.1.288 (Compromised User IP),2024-04-24 03:45:00,application/json,202,1 (potential account invitation for admin role from compromised user - insider threat)
+TRACE,/healthz,-,curl/7.81.0,[invalid URL removed],10.0.0.20 (External Scanner IP),2024-04-24 03:50:00,message/http,405,1 (potential information disclosure attempt using TRACE method on health check endpoint)
+POST,/api/v3/transfer,"from_account=""12345678"" & to_account=""98765432"" & amount=10000.00",Python-requests/2.28.1,[invalid URL removed],192.168.1.289,2024-04-24 03:55:00,application/json,403,1 (potential unauthorized fund transfer attempt)
+PUT,/userprefs/language,"lang=""unknown_language""",Firefox/108.0,[invalid URL removed],192.168.1.290,2024-04-24 04:00:00,application/json,400,0 (changing user preferences to an unknown language - not necessarily an attack)
+POST,/api/v1/reviews,"product_id=123 & rating=0 & comment=""This product is terrible!""",Chrome/103.0.0.0,product page: [invalid URL removed],192.168.1.291,2024-04-24 04:05:00,application/json,201,0 (posting a negative review - not necessarily an attack)
+GET,/admin/?next=/,-,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",[invalid URL removed],192.168.1.292,2024-04-24 04:10:00,text/html,302,1 (potential session fixation attempt by including desired next URL in request)
+POST,/upload,"filename=""important_report.pdf"" & file=@evil_script.sh",curl/7.81.0,[invalid URL removed],192.168.1.293,2024-04-24 04:15:00,multipart/form-data,415,1 (potential file upload attempt with malicious script disguised as a report)
+POST,/api/v4/search,"query=""SQL injection test""",Java/17.0.2,[invalid URL removed],10.0.0.21 (Suspicious IP),2024-04-24 04:20:00,application/json,400,1 (potential SQL injection attempt using a specific search query from a suspicious IP)
