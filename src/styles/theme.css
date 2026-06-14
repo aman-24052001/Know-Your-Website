@@ -15,13 +15,21 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-html, body, #root { height: 100%; overflow: hidden; }
-
-body {
-  background: var(--cream);
+/* Desktop: locked viewport layout */
+html, body, #root {
+  height: 100%;
   font-family: var(--font-ui);
   color: var(--ink);
+  background: var(--cream);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Mobile: scrollable */
+@media (max-width: 768px) {
+  html, body, #root {
+    height: auto;
+    overflow: auto;
+  }
 }
 
 ::-webkit-scrollbar { width: 5px; height: 5px; }
